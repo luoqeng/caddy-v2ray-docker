@@ -1,4 +1,12 @@
 
+#second-level.domain {
+#    redir 301 {
+#        if {host} is second-level.domain
+#        / https://www.{host}{uri}
+#    }
+#}
+
+
 your.domain {
 
     log ./caddy.log

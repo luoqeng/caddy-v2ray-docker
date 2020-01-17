@@ -10,15 +10,22 @@ services:
             - "8001" # if you need to change this you should change Caddyfile as well
     caddy:
         restart: always
-        image: abiosoft/caddy
+        image: luoqeng/caddy
+
+        #image: abiosoft/caddy
+        
+        #image: caddy:latest
+        #build:
+            #context: github.com/abiosoft/caddy-docker.git
+            #args:
+                #- plugins=forwardproxy,ipfilter
+
         volumes:
             - ./caddy/Caddyfile:/etc/Caddyfile:ro
             - ./caddy/cert:/root/.caddy
             - ./caddy/srv:/srv
         environment:
             - ACME_AGREE=true
-        args:
-            - plugins=forwardproxy,ipfilter
         ports:
             - "80:80"
             - "443:443"
