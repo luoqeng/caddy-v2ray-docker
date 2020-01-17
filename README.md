@@ -54,6 +54,10 @@ sed -i "s/uuid/${UUID}/" ./v2ray/client-settings-config.json
 sed -i "s/your.domain/${DOMAIN}/" ./v2ray/client-settings-config.json
 ```
 
+透明代理推荐使用 koolshare x64 固件离线安装科学上网
+ - https://github.com/hq450/fancyss_history_package/tree/master/fancyss_X64
+ - https://firmware.koolshare.cn/LEDE_X64_fw867
+
 参考
  - https://gist.github.com/dcb9/1e0f0346400e42fb4d03ead124da1658
  - https://github.com/nanking/docker-caddy-v2ray
