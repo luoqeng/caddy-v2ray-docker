@@ -45,7 +45,7 @@ echo 'hello' > ./caddy/srv/index.html
 
 启动 caddy + v2ray
 ```
-docker-compose up -d
+sudo docker-compose up -d
 ```
 
 v2ray 客户端配置
