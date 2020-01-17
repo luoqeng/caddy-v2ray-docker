@@ -6,9 +6,9 @@ vmess over wss `ss vmess 这些自发明的翻墙协议最终都跑在tls里面:
 
 默认占用 80 433 端口, 要使用其他端口，自行修改 Caddyfile 配置
 
-安装 docker-ce 请参照 [docker-ce_install](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+安装 [docker-ce](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 
-安装 docker-compose
+安装 [docker-compose](https://docs.docker.com/compose/install/)
 ```
 sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
