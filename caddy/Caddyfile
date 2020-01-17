@@ -19,6 +19,6 @@ your.domain {
 
     forwardproxy {
         basicauth admin pass123456
-        probe_resistance your.domain
+        probe_resistance your.domain/index.html
     }
 }
