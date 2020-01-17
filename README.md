@@ -23,7 +23,7 @@ DOMAIN=www.xxxx.com
 sed -i "s/your.domain/${DOMAIN}/" ./caddy/Caddyfile
 ```
 
-替换 h2 代理密码 默认账号密码 admin pass123456
+替换 h2 默认账号密码 admin pass123456
 ```
 HTTPS_USER=ubuntu
 sed -i "s/admin/${HTTPS_USER}/" ./caddy/Caddyfile
