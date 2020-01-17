@@ -1,4 +1,6 @@
-### caddy 代理 websocket 流量转发给 v2ray 处理, vmess over wss `ss vmess 这些自发明的翻墙协议最终都跑在tls里面:)`
+#### caddy 代理 websocket 流量转发给 v2ray 处理 
+
+vmess over wss `ss vmess 这些自发明的翻墙协议最终都跑在tls里面:)`
 
 请先解析自己域名到部署服务的 ip 地址生效后再使用
 
