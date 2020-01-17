@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  v2ray:
+    restart: always
+    image: v2ray/official
+    volumes:
+    - ./v2ray/config.json:/etc/v2ray/config.json
+    expose:
+    - "8001" # if you need to change this you should change Caddyfile as well
+
+  caddy:
+    restart: always
+    image: abiosoft/caddy
+    volumes:
+    - ./caddy/Caddyfile:/etc/Caddyfile:ro
+    - ./caddy/cert:/root/.caddy
+    - ./caddy/srv:/srv
+    environment:
+    - ACME_AGREE=true
+    ports:
+    - "80:80"
+    - "443:443"

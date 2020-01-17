@@ -1,0 +1,16 @@
+
+your.domain {
+
+    log ./caddy.log
+    root /srv
+    gzip
+    proxy /ws v2ray:8001 {
+        websocket
+        header_upstream -Origin
+    }
+
+    forwardproxy {
+        basicauth admin pass123456
+        probe_resistance your.domain
+    }
+}
