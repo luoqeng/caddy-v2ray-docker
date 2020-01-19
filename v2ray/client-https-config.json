@@ -1,0 +1,39 @@
+{
+    "inbounds": [
+        {
+            "port": 1080, 
+            "protocol": "socks", 
+            "sniffing": {
+                "enabled": true,
+                "destOverride": ["http", "tls"]
+
+            },
+            "settings": {
+                "auth": "noauth"  
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "http",
+            "settings": {
+                "servers": [
+                    {
+                        "address": "your.domain",
+                        "port": 443,
+                        "users": [
+                            {
+                                "Username": "admin",
+                                "Password": "pass123456"
+                            }
+                        ] 
+                    }
+                ]
+            },
+            "streamSettings": {
+                "security": "tls"
+            }
+        }
+    ]
+}
+

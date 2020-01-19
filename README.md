@@ -10,7 +10,8 @@ vmess over wss `ss vmess 这些自发明的翻墙协议最终都跑在tls里面:
 
 安装 [docker-compose](https://docs.docker.com/compose/install/)
 ```
-sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" \
+            -o /usr/local/bin/docker-compose
 
 sudo chmod +x /usr/local/bin/docker-compose
 ```
@@ -38,6 +39,8 @@ sed -i "s/admin/${HTTPS_USER}/" ./caddy/Caddyfile
 
 HTTPS_PASSWD=pass2048
 sed -i "s/pass123456/${HTTPS_PASSWD}/" ./caddy/Caddyfile
+
+# https代理地址 https://ubuntu:pass2048@www.xxxx.com
 ```
 
 默认页面
@@ -54,6 +57,16 @@ v2ray [客户端](https://www.v2ray.com/awesome/tools.html)配置
 ```
 sed -i "s/uuid/${UUID}/" ./v2ray/client-simple-config.json
 sed -i "s/your.domain/${DOMAIN}/" ./v2ray/client-simple-config.json
+```
+
+
+[V2ray 4.21](https://github.com/v2ray/v2ray-core/pull/1813) 版本支持 https 代理作为 outbounds
+
+但目前很多 v2ray 客户端不支持 https 代理作为 outbounds。
+
+可选客户端启动 [v2ray socks2https](https://guide.v2fly.org/en_US/basics/http.html#configuration)
+```
+sudo docker run -dit --restart always --name v2ray-socks -p 1080:1080  -d -v $PWD/v2ray/client-https-config.json:/etc/v2ray/config.json v2ray/official
 ```
 
 透明代理推荐使用 koolshare x64 固件离线安装科学上网
