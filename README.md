@@ -52,8 +52,8 @@ sudo docker-compose up -d
 
 v2ray [客户端](https://www.v2ray.com/awesome/tools.html)配置
 ```
-sed -i "s/uuid/${UUID}/" ./v2ray/client-settings-config.json
-sed -i "s/your.domain/${DOMAIN}/" ./v2ray/client-settings-config.json
+sed -i "s/uuid/${UUID}/" ./v2ray/client-simple-config.json
+sed -i "s/your.domain/${DOMAIN}/" ./v2ray/client-simple-config.json
 ```
 
 透明代理推荐使用 koolshare x64 固件离线安装科学上网
