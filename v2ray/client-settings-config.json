@@ -1,14 +1,16 @@
 {
     "inbounds": [
-        "port": 1080, 
-        "protocol": "socks", 
-        "sniffing": {
-            "enabled": true,
-            "destOverride": ["http", "tls"]
+        {
+            "port": 1080, 
+            "protocol": "socks", 
+            "sniffing": {
+                "enabled": true,
+                "destOverride": ["http", "tls"]
 
-        },
-        "settings": {
-            "auth": "noauth"  
+            },
+            "settings": {
+                "auth": "noauth"  
+            }
         }
     ],
     "outbounds": [
