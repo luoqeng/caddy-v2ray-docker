@@ -1,24 +1,9 @@
-
-#second-level.domain {
-#    redir 301 {
-#        if {host} is second-level.domain
-#        / https://www.{host}{uri}
-#    }
-#}
-
-
 your.domain {
-
     log ./caddy.log
     root /srv
     gzip
     proxy /ws v2ray:8001 {
         websocket
         header_upstream -Origin
-    }
-
-    forwardproxy {
-        basicauth admin pass123456
-        probe_resistance your.domain/index.html
     }
 }

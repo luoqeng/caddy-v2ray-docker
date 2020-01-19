@@ -10,9 +10,9 @@ services:
             - "8001" # if you need to change this you should change Caddyfile as well
     caddy:
         restart: always
-        image: abiosoft/caddy
+        #image: abiosoft/caddy
 
-        #image: luoqeng/caddy
+        image: luoqeng/caddy
         
         #image: caddy:latest
         #build:

@@ -1,4 +1,4 @@
-#### caddy 代理 websocket 流量转发给 v2ray 处理 
+#### caddy 代理 websocket 流量转发给 v2ray 处理
 
 vmess over wss `ss vmess 这些自发明的翻墙协议最终都跑在tls里面:)`
 
@@ -28,19 +28,7 @@ sed -i "s/uuid/${UUID}/" ./v2ray/config.json
 替换域名
 ```
 DOMAIN=www.xxxx.com
-
 sed -i "s/your.domain/${DOMAIN}/" ./caddy/Caddyfile
-```
-
-替换 https 代理默认账号密码 admin pass123456 `支持 h2 tls1.3`
-```
-HTTPS_USER=ubuntu
-sed -i "s/admin/${HTTPS_USER}/" ./caddy/Caddyfile
-
-HTTPS_PASSWD=pass2048
-sed -i "s/pass123456/${HTTPS_PASSWD}/" ./caddy/Caddyfile
-
-# https代理地址 https://ubuntu:pass2048@www.xxxx.com
 ```
 
 默认页面
@@ -60,11 +48,34 @@ sed -i "s/your.domain/${DOMAIN}/" ./v2ray/client-simple-config.json
 ```
 
 
-[V2ray 4.21](https://github.com/v2ray/v2ray-core/pull/1813) 版本支持 https 代理作为 outbounds
+以下可选步骤
+
+启用 https 代理，替换默认账号密码 admin pass123456 `支持 h2 tls1.3`
+```
+cp ./caddy/forwardproxyCaddyfile ./caddy/Caddyfile
+
+DOMAIN=www.xxxx.com
+sed -i "s/your.domain/${DOMAIN}/" ./caddy/Caddyfile
+
+HTTPS_USER=ubuntu
+sed -i "s/admin/${HTTPS_USER}/" ./caddy/Caddyfile
+
+HTTPS_PASSWD=pass2048
+sed -i "s/pass123456/${HTTPS_PASSWD}/" ./caddy/Caddyfile
+
+# https代理地址 https://ubuntu:pass2048@www.xxxx.com
+
+sudo docker-compose stop caddy
+sudo docker-compose rm caddy
+
+docker-compose -f docker-compose-forwardproxy.yml up -d
+```
+
+[v2ray 4.21](https://github.com/v2ray/v2ray-core/pull/1813) 版本支持 https 代理作为 outbounds
 
 但目前很多 v2ray 客户端不支持 https 代理作为 outbounds。
 
-可选客户端启动 [v2ray socks2https](https://guide.v2fly.org/en_US/basics/http.html#configuration)
+客户端启动 [v2ray socks2https](https://guide.v2fly.org/en_US/basics/http.html#configuration)
 ```
 sudo docker run -dit --restart always --name v2ray-socks -p 1080:1080  -d -v $PWD/v2ray/client-https-config.json:/etc/v2ray/config.json v2ray/official
 ```
