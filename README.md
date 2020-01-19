@@ -50,7 +50,7 @@ echo 'hello' > ./caddy/srv/index.html
 sudo docker-compose up -d
 ```
 
-v2ray 客户端配置
+v2ray [客户端](https://www.v2ray.com/awesome/tools.html)配置
 ```
 sed -i "s/uuid/${UUID}/" ./v2ray/client-settings-config.json
 sed -i "s/your.domain/${DOMAIN}/" ./v2ray/client-settings-config.json
