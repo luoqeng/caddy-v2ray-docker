@@ -80,9 +80,13 @@ docker-compose -f docker-compose-forwardproxy.yml up -d
 sudo docker run -dit --restart always --name v2ray-socks -p 1080:1080  -d -v $PWD/v2ray/client-https-config.json:/etc/v2ray/config.json v2ray/official
 ```
 
-透明代理推荐使用 koolshare x64 固件离线安装科学上网
+透明代理推荐 openwrt + luci-app-ssr-plus
+ - https://downloads.openwrt.org/releases/19.07.1/targets/x86/64/
+ - https://github.com/coolsnowwolf/lede/tree/master/package/lean/luci-app-ssr-plus
+
+~~透明代理推荐使用 koolshare x64 固件离线安装科学上网
  - https://github.com/hq450/fancyss_history_package/tree/master/fancyss_X64
- - https://firmware.koolshare.cn/LEDE_X64_fw867
+ - https://firmware.koolshare.cn/LEDE_X64_fw867~~
 
 参考
  - https://gist.github.com/dcb9/1e0f0346400e42fb4d03ead124da1658
