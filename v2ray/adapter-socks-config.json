@@ -1,0 +1,44 @@
+{
+    "inbounds": [
+        {
+            "protocol": "socks",
+            "port": 9090,
+            "settings": {
+                "udp": false,
+                "auth": "password",
+                "accounts": [
+                    {
+                        "user": "guest",
+                        "pass": "passwd"
+                    }
+                ]
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "vmess",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "your.domain",
+                        "port": 443,
+                        "users": [
+                            {
+                                "id": "uuid",
+                                "alterId": 64
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "ws",
+                "security": "tls",
+                "wsSettings": {
+                    "path": "/ws"
+                }
+            }
+        }
+    ]
+}
