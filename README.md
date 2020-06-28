@@ -77,7 +77,7 @@ docker-compose -f docker-compose-forwardproxy.yml up -d
 
 客户端启动 [v2ray socks2https](https://guide.v2fly.org/en_US/basics/http.html#configuration)
 ```
-sudo docker run -dit --restart always --name v2ray-socks -p 1080:1080  -d -v $PWD/v2ray/client-https-config.json:/etc/v2ray/config.json v2ray/official
+sudo docker run -dit --restart always --name v2ray-socks -p 1080:1080  -d -v $PWD/v2ray/client-https-config.json:/etc/v2ray/config.json v2fly/v2fly-core
 ```
 
 透明代理推荐 openwrt + luci-app-ssr-plus [预编译好的下载](https://github.com/luoqeng/OpenWrt-on-VMware/releases)
