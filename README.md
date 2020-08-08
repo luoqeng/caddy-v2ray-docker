@@ -48,7 +48,7 @@ sed -i "s/your.domain/${DOMAIN}/" ./v2ray/client-simple-config.json
 ```
 
 
-以下可选步骤
+#### 以下可选步骤
 
 启用 https 代理，替换默认账号密码 admin pass123456 `支持 h2 tls1.3`
 ```
