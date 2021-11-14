@@ -47,8 +47,12 @@ sed -i "s/uuid/${UUID}/" ./v2ray/client-simple-config.json
 sed -i "s/your.domain/${DOMAIN}/" ./v2ray/client-simple-config.json
 ```
 
-
 #### 以下可选步骤
+
+shadowsocks adapter
+```
+sudo docker run -dit --restart always --name v2fly-ss -p 2048:2048  -d -v $PWD/v2ray/adapter-shadowsocks-config.json:/etc/v2ray/config.json v2fly/v2fly-core
+```
 
 启用 https 代理，替换默认账号密码 admin pass123456 `支持 h2 tls1.3`
 ```
