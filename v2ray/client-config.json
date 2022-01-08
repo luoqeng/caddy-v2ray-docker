@@ -24,7 +24,7 @@
                         "users": [
                             {
                                 "id": "uuid",
-                                "alterId": 64
+                                "alterId": 0
                             }
                         ]
                     }
