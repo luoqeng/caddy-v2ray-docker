@@ -1,7 +1,7 @@
 
 推荐使用navieproxy https://github.com/klzgrad/naiveproxy
 
-以不维护更新
+已不维护更新
 
 #### caddy 代理 websocket 流量转发给 v2ray 处理
 
